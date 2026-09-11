@@ -18,48 +18,34 @@ import SplitText from './components/SplitText';
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<'es' | 'en'>(() => {
-    if (typeof window !== 'undefined') {
-      const savedLang = localStorage.getItem('user-lang') as 'es' | 'en';
-      if (savedLang) return savedLang;
-      
-      const browserLang = navigator.language.split('-')[0];
-      return browserLang === 'es' ? 'es' : 'en';
+    if (typeof window === 'undefined') return 'en';
+    try {
+      const savedLang = window.localStorage.getItem('user-lang');
+      if (savedLang === 'es' || savedLang === 'en') return savedLang;
+    } catch {
+      // Browser privacy settings may disable storage.
     }
-    return 'es';
+    const languages = navigator.languages?.length
+      ? navigator.languages
+      : [navigator.language];
+    for (const language of languages) {
+      const base = language.toLowerCase().split(/[-_]/)[0];
+      if (base === 'es' || base === 'en') return base;
+    }
+    return 'en';
   });
 
   useEffect(() => {
-    const detectLocation = async () => {
-      // If user already has a saved preference, don't override it automatically
-      if (localStorage.getItem('user-lang')) return;
-
-      try {
-        const response = await fetch('https://ipapi.co/json/');
-        if (!response.ok) return;
-        
-        const data = await response.json();
-        const spanishSpeakingCountries = [
-          'ES', 'MX', 'AR', 'CL', 'CO', 'PE', 'VE', 'EC', 'GT', 
-          'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PR', 
-          'PA', 'UY', 'GQ'
-        ];
-        
-        if (data.country_code && !spanishSpeakingCountries.includes(data.country_code)) {
-          setLang('en');
-        } else if (data.country_code && spanishSpeakingCountries.includes(data.country_code)) {
-          setLang('es');
-        }
-      } catch (error) {
-        console.warn('Location detection skipped:', error);
-      }
-    };
-
-    detectLocation();
-  }, []);
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const handleSetLang = (newLang: 'es' | 'en') => {
     setLang(newLang);
-    localStorage.setItem('user-lang', newLang);
+    try {
+      window.localStorage.setItem('user-lang', newLang);
+    } catch {
+      // Keep the selection working even when storage is unavailable.
+    }
   };
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
@@ -257,7 +243,7 @@ const App: React.FC = () => {
                 <div className="space-y-12">
                   <div className="space-y-6">
                     <h5 className="text-zinc-600 text-[10px] font-black uppercase tracking-[0.2em] flex items-center gap-4">
-                      {lang === 'es' ? 'Trayectoria' : 'Trajectory'}
+                      {lang === 'es' ? 'Trayectoria' : 'Experience'}
                       <div className="h-px flex-1 bg-white/5"></div>
                     </h5>
                     <div className="space-y-6">
@@ -300,7 +286,7 @@ const App: React.FC = () => {
                 <div className="relative aspect-[4/5] bg-zinc-900 overflow-hidden shadow-2xl">
                   <img 
                     src="https://images.squidge.org/images/2026/04/28/Retrato-en-blanco-y-negro.png" 
-                    alt="Artist Profile" 
+                    alt={lang === 'es' ? 'Retrato de Matías Navarrete' : 'Portrait of Matías Navarrete'} 
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:scale-110"
                   />
@@ -312,7 +298,7 @@ const App: React.FC = () => {
                       <h4 className="text-white text-3xl md:text-5xl font-serif italic tracking-tight">Matias Navarrete</h4>
                       <div className="flex items-center gap-3">
                         <div className="h-px w-6 bg-studio-accent"></div>
-                        <span className="text-zinc-400 text-[9px] font-mono tracking-widest uppercase">3D Visual Artist</span>
+                        <span className="text-zinc-400 text-[9px] font-mono tracking-widest uppercase">{lang === 'es' ? 'Artista visual 3D' : '3D Visual Artist'}</span>
                       </div>
                     </div>
                   </div>
@@ -320,7 +306,7 @@ const App: React.FC = () => {
 
                 <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-studio-accent text-black px-6 py-3 md:px-8 md:py-4 rounded-full shadow-2xl flex items-center gap-3 z-10 transition-transform group-hover:scale-105 duration-700">
                   <div className="w-1.5 h-1.5 rounded-full bg-black animate-pulse"></div>
-                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap">Available for global projects</span>
+                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap">{lang === 'es' ? 'Disponible para proyectos internacionales' : 'Available for global projects'}</span>
                 </div>
               </div>
             </div>
@@ -350,7 +336,7 @@ const App: React.FC = () => {
                   <div className="group space-y-4">
                     <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
                       <h4 className="text-xl md:text-2xl font-serif text-white">{t.about.experience.freelance}</h4>
-                      <span className="text-zinc-600 font-mono text-[10px]">2024 — Present</span>
+                      <span className="text-zinc-600 font-mono text-[10px]">{lang === 'es' ? '2024 — Actualidad' : '2024 — Present'}</span>
                     </div>
                     <p className="text-zinc-500 text-sm md:text-base font-light italic max-w-2xl">
                       {lang === 'es'
