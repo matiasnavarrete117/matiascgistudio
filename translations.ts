@@ -3,13 +3,13 @@ export const translations = {
   es: {
     nav: { work: 'Portfolio', about: 'Sobre mí', contact: 'Contacto', resume: 'Currículum' },
     hero: {
-      tagline: 'Visualización de Producto High-End para Marcas y Agencias',
+      tagline: 'Visualización 3D de productos para marcas y agencias',
       desc: 'Creo visuales 3D fotorrealistas que ayudan a que los productos destaquen y vendan.',
       cta: 'Ver Proyectos',
       scroll: 'Explorar'
     },
     work: {
-      tagline: 'Selected Works',
+      tagline: 'Trabajos seleccionados',
       title1: 'CGI',
       title2: 'PORTFOLIO',
       desc: 'Visualizaciones de producto de alta fidelidad, diseñadas para dominar el mercado digital contemporáneo.',
@@ -23,12 +23,17 @@ export const translations = {
       title1: 'SOBRE',
       title2: 'MÍ',
       desc: 'Artista 3D especializado en la visualización de productos de alta gama y CGI fotorrealista. Mi enfoque combina la precisión técnica con una sensibilidad estética refinada para ayudar a marcas y agencias a potenciar su contenido visual.',
-      bio: 'Formado en Animación Digital por la Universidad Mayor y con experiencia directa en la industria publicitaria y de VFX (Poston Works), entiendo que una imagen no solo debe verse bien, sino cumplir un objetivo estratégico: captar la atención y convertir. Basado en Santiago de Chile, trabajo de forma remota para clientes globales, entregando assets listos para producción con la más alta fidelidad técnica.',
+      bio: 'Formado en Animación Digital por la Universidad Mayor y con experiencia directa en la industria publicitaria y de VFX (Poston Digital Arts), entiendo que una imagen no solo debe verse bien, sino cumplir un objetivo estratégico: captar la atención y convertir. Basado en Santiago de Chile, trabajo de forma remota para clientes globales, entregando assets listos para producción con la más alta fidelidad técnica.',
       experience: {
         title: 'Trayectoria Profesional',
-        poston: 'Artista 3D en Poston Works (Publicidad & VFX)',
-        freelance: 'Freelance & Negocio de Impresión 3D',
-        education: 'Egresado de Animación Digital - Universidad Mayor'
+        poston: 'Generalista 3D en Poston Digital Arts',
+        internship: 'Generalista 3D — Práctica en Estudio Lunes',
+        postonDates: 'Nov 2024 — Ene 2025',
+        internshipDates: 'Mar — Jun 2024',
+        educationDates: '2020 — 2024',
+        postonDesc: 'Modelado 3D, texturizado y VFX para producciones audiovisuales. Creación y refinamiento de assets según los requisitos del proyecto y el feedback del equipo.',
+        internshipDesc: 'Modelado 3D, texturizado e iluminación de escenas. Desarrollo de conceptos para personajes y entornos utilizados en cortometrajes.',
+        education: 'Titulado en Cine y Animación Digital — Universidad Mayor'
       },
       skills: {
         rendering: 'Dirección de Renderizado Fotorrealista',
@@ -51,14 +56,14 @@ export const translations = {
       viewVideo: 'Ver Breakdown'
     },
     methodology: {
-      tagline: 'Workflow',
+      tagline: 'Proceso',
       title1: 'MÉTODO DE',
       title2: 'TRABAJO',
       steps: [
-        { title: 'Briefing & Concept', desc: 'Definición de objetivos, análisis de marca y dirección de arte inicial.' },
-        { title: 'Blocking & Composition', desc: 'Estructura 3D, composición de cámara y validación de formas.' },
-        { title: 'Lookdev & Lighting', desc: 'Desarrollo de materiales, iluminación cinematográfica y refinamiento fotorrealista.' },
-        { title: 'Mastering & Delivery', desc: 'Renderizado final en 4K, post-producción y entrega de activos listos para producción.' }
+        { title: 'Brief y concepto', desc: 'Definición de objetivos, análisis de marca y dirección de arte inicial.' },
+        { title: 'Estructura y composición', desc: 'Estructura 3D, composición de cámara y validación de formas.' },
+        { title: 'Materiales e iluminación', desc: 'Desarrollo de materiales, iluminación cinematográfica y refinamiento fotorrealista.' },
+        { title: 'Acabado y entrega', desc: 'Renderizado final en 4K, post-producción y entrega de activos listos para producción.' }
       ]
     }
   },
@@ -85,12 +90,17 @@ export const translations = {
       title1: 'ABOUT',
       title2: 'ME',
       desc: '3D Artist specialized in high-end product visualization and photorealistic CGI. My approach combines technical precision with a refined aesthetic sensibility to help brands and agencies boost their visual content.',
-      bio: 'Trained in Digital Animation at Universidad Mayor and with direct experience in the advertising and VFX industry (Poston Works), I understand that an image must not only look good but also serve a strategic goal: capturing attention and converting. Based in Santiago, Chile, I work remotely for global clients, delivering production-ready assets with the highest technical fidelity.',
+      bio: 'Trained in Digital Animation at Universidad Mayor and with direct experience in the advertising and VFX industry (Poston Digital Arts), I understand that an image must not only look good but also serve a strategic goal: capturing attention and converting. Based in Santiago, Chile, I work remotely for global clients, delivering production-ready assets with the highest technical fidelity.',
       experience: {
         title: 'Professional Path',
-        poston: '3D Artist at Poston Works (Advertising & VFX)',
-        freelance: 'Freelance & 3D Printing Business',
-        education: 'Digital Animation Graduate - Universidad Mayor'
+        poston: '3D Generalist at Poston Digital Arts',
+        internship: '3D Generalist — Internship at Estudio Lunes',
+        postonDates: 'Nov 2024 — Jan 2025',
+        internshipDates: 'Mar — Jun 2024',
+        educationDates: '2020 — 2024',
+        postonDesc: '3D modeling, texturing, and VFX for audiovisual productions. Created and refined assets based on project requirements and team feedback.',
+        internshipDesc: '3D modeling, texturing, and lighting for scenes. Concept development for characters and environments used in short films.',
+        education: 'B.A. in Film and Digital Animation — Universidad Mayor'
       },
       skills: {
         rendering: 'Photorealistic Rendering Direction',
