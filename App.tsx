@@ -248,9 +248,9 @@ const App: React.FC = () => {
                     </h5>
                     <div className="space-y-6">
                       {[
-                        { year: '2022 — PRS', role: t.about.experience.poston, company: 'Poston Works' },
-                        { year: '2020 — 2022', role: t.about.experience.freelance, company: 'Freelance' },
-                        { year: '2019', role: t.about.experience.education, company: 'U. Mayor' }
+                        { year: t.about.experience.postonDates, role: t.about.experience.poston, company: 'Poston Digital Arts' },
+                        { year: t.about.experience.internshipDates, role: t.about.experience.internship, company: 'Estudio Lunes' },
+                        { year: t.about.experience.educationDates, role: t.about.experience.education, company: 'U. Mayor' }
                       ].map((item, idx) => (
                         <div key={idx} className="group flex justify-between items-start border-b border-white/5 pb-4 last:border-0">
                           <div className="space-y-1">
@@ -324,24 +324,20 @@ const App: React.FC = () => {
                   <div className="group space-y-4">
                     <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
                       <h4 className="text-xl md:text-2xl font-serif text-white">{t.about.experience.poston}</h4>
-                      <span className="text-zinc-600 font-mono text-[10px]">2024 — 2025</span>
+                      <span className="text-zinc-600 font-mono text-[10px]">{t.about.experience.postonDates}</span>
                     </div>
                     <p className="text-zinc-500 text-sm md:text-base font-light italic max-w-2xl">
-                      {lang === 'es' 
-                        ? 'Creación de assets 3D fotorrealistas para campañas publicitarias de alto impacto, trabajando bajo plazos exigentes y feedback constante de agencias.' 
-                        : 'Creation of photorealistic 3D assets for high-impact advertising campaigns, working under demanding deadlines and constant agency feedback.'}
+                      {t.about.experience.postonDesc}
                     </p>
                   </div>
 
                   <div className="group space-y-4">
                     <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
-                      <h4 className="text-xl md:text-2xl font-serif text-white">{t.about.experience.freelance}</h4>
-                      <span className="text-zinc-600 font-mono text-[10px]">{lang === 'es' ? '2024 — Actualidad' : '2024 — Present'}</span>
+                      <h4 className="text-xl md:text-2xl font-serif text-white">{t.about.experience.internship}</h4>
+                      <span className="text-zinc-600 font-mono text-[10px]">{t.about.experience.internshipDates}</span>
                     </div>
                     <p className="text-zinc-500 text-sm md:text-base font-light italic max-w-2xl">
-                      {lang === 'es'
-                        ? 'Desarrollo de visualizaciones de producto personalizadas y gestión integral de proyectos 3D, desde el concepto hasta la entrega final para clientes internacionales.'
-                        : 'Development of custom product visualizations and comprehensive 3D project management, from concept to final delivery for international clients.'}
+                      {t.about.experience.internshipDesc}
                     </p>
                   </div>
 
@@ -350,7 +346,7 @@ const App: React.FC = () => {
                       <h4 className="text-xl md:text-2xl font-serif text-white">{t.about.experience.education}</h4>
                     </div>
                     <p className="text-zinc-500 text-sm md:text-base font-light italic">
-                      Universidad Mayor
+                      Universidad Mayor · {t.about.experience.educationDates}
                     </p>
                   </div>
                 </div>
@@ -475,9 +471,7 @@ const App: React.FC = () => {
                 <span className="text-[8px] font-black uppercase tracking-[0.2em]">ArtStation</span>
               </a>
             </div>
-            <div className="text-[8px] font-black uppercase tracking-[0.5em] text-zinc-700">
-              {t.contact.footer}
-            </div>
+
           </div>
         </div>
       </footer>
