@@ -221,7 +221,7 @@ const App: React.FC = () => {
         {/* Studio / About Section */}
         <section id="about" className="py-24 md:py-40 lg:py-60 bg-zinc-950/30 border-y border-white/5 scroll-mt-24">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-8 space-y-32">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 md:gap-24 lg:gap-40 items-start">
+            <div className="max-w-3xl mx-auto">
               <div className="space-y-12 md:space-y-16 lg:space-y-20">
                 <div className="space-y-6 md:space-y-8">
                   <span className="text-zinc-700 text-[8px] md:text-[9px] font-black uppercase tracking-[0.6em]">{t.about.tagline}</span>
@@ -280,35 +280,6 @@ const App: React.FC = () => {
                 </div>
               </div>
               
-              <div className="relative group">
-                <div className="absolute inset-0 border border-white/5 translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8 transition-transform duration-1000"></div>
-                
-                <div className="relative aspect-[4/5] bg-zinc-900 overflow-hidden shadow-2xl">
-                  <img 
-                    src="https://images.squidge.org/images/2026/04/28/Retrato-en-blanco-y-negro.png" 
-                    alt={lang === 'es' ? 'Retrato de Matías Navarrete' : 'Portrait of Matías Navarrete'} 
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-                  
-                  {/* Overlay Info */}
-                  <div className="absolute bottom-0 left-0 p-10 md:p-14 w-full">
-                    <div className="space-y-4">
-                      <h4 className="text-white text-3xl md:text-5xl font-serif italic tracking-tight">Matias Navarrete</h4>
-                      <div className="flex items-center gap-3">
-                        <div className="h-px w-6 bg-studio-accent"></div>
-                        <span className="text-zinc-400 text-[9px] font-mono tracking-widest uppercase">{lang === 'es' ? 'Artista visual 3D' : '3D Visual Artist'}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-studio-accent text-black px-6 py-3 md:px-8 md:py-4 rounded-full shadow-2xl flex items-center gap-3 z-10 transition-transform group-hover:scale-105 duration-700">
-                  <div className="w-1.5 h-1.5 rounded-full bg-black animate-pulse"></div>
-                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap">{lang === 'es' ? 'Disponible para proyectos internacionales' : 'Available for global projects'}</span>
-                </div>
-              </div>
             </div>
 
             {/* Professional Path / Experience Section */}
