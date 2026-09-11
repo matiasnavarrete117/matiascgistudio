@@ -72,3 +72,9 @@
 ::-webkit-scrollbar-thumb {
   @apply bg-zinc-800 rounded-full hover:bg-zinc-600 transition-colors;
 }
+
+/* Keep keyboard navigation visible against the dark background. */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #f1e5ac;
+  outline-offset: 4px;
+}

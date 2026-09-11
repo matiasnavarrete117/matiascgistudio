@@ -138,7 +138,7 @@ const App: React.FC = () => {
         <Hero lang={lang} />
 
         {/* Portfolio Section */}
-        <section id="work" className="py-24 md:py-40 lg:py-60 px-6 md:px-12 lg:px-8 max-w-7xl mx-auto scroll-mt-24">
+        <section id="work" className="py-24 md:py-40 lg:py-60 px-6 md:px-12 lg:px-8 max-w-7xl mx-auto scroll-mt-36 lg:scroll-mt-28">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 lg:mb-32 gap-12 md:gap-16">
             <div className="space-y-6 md:space-y-8 relative">
               {/* Rotating Circular Text Badge */}
@@ -219,7 +219,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Studio / About Section */}
-        <section id="about" className="py-24 md:py-40 lg:py-60 bg-zinc-950/30 border-y border-white/5 scroll-mt-24">
+        <section id="about" className="py-24 md:py-40 lg:py-60 bg-zinc-950/30 border-y border-white/5 scroll-mt-36 lg:scroll-mt-28">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-8 space-y-32">
             <div className="max-w-3xl mx-auto">
               <div className="space-y-12 md:space-y-16 lg:space-y-20">
@@ -362,7 +362,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-24 md:py-40 lg:py-60 px-6 md:px-8 max-w-3xl mx-auto text-center scroll-mt-24">
+        <section id="contact" className="py-24 md:py-40 lg:py-60 px-6 md:px-8 max-w-3xl mx-auto text-center scroll-mt-36 lg:scroll-mt-28">
           <div className="space-y-8 md:space-y-12">
             <SplitText 
               text={`${t.contact.title1} ${t.contact.title2}`}
@@ -393,7 +393,7 @@ const App: React.FC = () => {
                 src="https://i.ibb.co/krv9LzL/mci-metallic-transparent-logo.png" 
                 alt="Logo" 
                 referrerPolicy="no-referrer"
-                className="h-full w-auto object-contain brightness-110 grayscale group-hover/footer-logo:grayscale-0 group-hover/footer-logo:brightness-125 transition-all duration-1000 ease-out" 
+                className="h-full w-auto object-contain brightness-0 invert transition-all duration-1000 ease-out" 
               />
               {/* Metallic Reflection Layer - Sophisticated Liquid Metal Effect */}
               <div 
