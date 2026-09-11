@@ -45,6 +45,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, lang }) => 
     ? (project.descriptionEs || project.description) 
     : (project.descriptionEn || project.description);
 
+  const categoryLabels: Record<string, string> = lang === 'es'
+    ? { Product: 'Producto', Advertising: 'Publicidad', 'Marketing Visuals': 'Marketing visual' }
+    : {};
+  const categoryLabel = (Array.isArray(project.category) ? project.category : [project.category])
+    .map(category => categoryLabels[category] || category).join(' / ');
+
   // Helper to determine if we should show the "active" state
   // Mobile: Active when in view
   // Desktop: Active when hovered
@@ -131,7 +137,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, lang }) => 
       
       {/* Technical Micro-labels */}
       <div className={`absolute top-6 left-6 flex flex-col gap-1 transition-opacity duration-500 delay-100 z-20 ${isActive ? 'opacity-100' : 'opacity-0'}`}>
-        <span className={`text-[7px] font-mono ${labelColor} uppercase tracking-widest`}>Resolution: 4K Master</span>
+        <span className={`text-[7px] font-mono ${labelColor} uppercase tracking-widest`}>{lang === 'es' ? 'Resolución: máster 4K' : 'Resolution: 4K Master'}</span>
         <span className={`text-[7px] font-mono ${labelColor} uppercase tracking-widest`}>Color: ACES CG</span>
       </div>
 
@@ -140,9 +146,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, lang }) => 
           <span>{project.year}</span>
           <span className={`w-1 h-1 bg-white/20 rounded-full`}></span>
           <span>
-            {Array.isArray(project.category) 
-              ? project.category.join(' / ') 
-              : project.category}
+            {categoryLabel}
           </span>
         </div>
         
@@ -167,12 +171,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, lang }) => 
       <div className={`absolute bottom-6 right-6 md:bottom-10 md:right-10 z-30 transition-all duration-500 ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
         {isMobile ? (
           <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-md ${buttonBg} shadow-xl`}>
-            <span className={`${textColor} text-[10px] md:text-xs font-black tracking-tighter`}>VIEW</span>
+            <span className={`${textColor} text-[10px] md:text-xs font-black tracking-tighter`}>{lang === 'es' ? 'VER' : 'VIEW'}</span>
           </div>
         ) : (
           <Magnetic strength={0.4}>
             <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-md ${buttonBg} shadow-xl`}>
-              <span className={`${textColor} text-[10px] md:text-xs font-black tracking-tighter`}>VIEW</span>
+              <span className={`${textColor} text-[10px] md:text-xs font-black tracking-tighter`}>{lang === 'es' ? 'VER' : 'VIEW'}</span>
             </div>
           </Magnetic>
         )}
