@@ -221,7 +221,7 @@ const App: React.FC = () => {
         {/* Studio / About Section */}
         <section id="about" className="py-24 md:py-40 lg:py-60 bg-zinc-950/30 border-y border-white/5 scroll-mt-24">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-8 space-y-32">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 md:gap-24 lg:gap-40 items-start">
+            <div className="max-w-3xl mx-auto">
               <div className="space-y-12 md:space-y-16 lg:space-y-20">
                 <div className="space-y-6 md:space-y-8">
                   <span className="text-zinc-700 text-[8px] md:text-[9px] font-black uppercase tracking-[0.6em]">{t.about.tagline}</span>
@@ -248,9 +248,9 @@ const App: React.FC = () => {
                     </h5>
                     <div className="space-y-6">
                       {[
-                        { year: '2022 — PRS', role: t.about.experience.poston, company: 'Poston Works' },
-                        { year: '2020 — 2022', role: t.about.experience.freelance, company: 'Freelance' },
-                        { year: '2019', role: t.about.experience.education, company: 'U. Mayor' }
+                        { year: t.about.experience.postonDates, role: t.about.experience.poston, company: 'Poston Digital Arts' },
+                        { year: t.about.experience.internshipDates, role: t.about.experience.internship, company: 'Estudio Lunes' },
+                        { year: t.about.experience.educationDates, role: t.about.experience.education, company: 'U. Mayor' }
                       ].map((item, idx) => (
                         <div key={idx} className="group flex justify-between items-start border-b border-white/5 pb-4 last:border-0">
                           <div className="space-y-1">
@@ -280,35 +280,6 @@ const App: React.FC = () => {
                 </div>
               </div>
               
-              <div className="relative group">
-                <div className="absolute inset-0 border border-white/5 translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8 transition-transform duration-1000"></div>
-                
-                <div className="relative aspect-[4/5] bg-zinc-900 overflow-hidden shadow-2xl">
-                  <img 
-                    src="https://images.squidge.org/images/2026/04/28/Retrato-en-blanco-y-negro.png" 
-                    alt={lang === 'es' ? 'Retrato de Matías Navarrete' : 'Portrait of Matías Navarrete'} 
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-                  
-                  {/* Overlay Info */}
-                  <div className="absolute bottom-0 left-0 p-10 md:p-14 w-full">
-                    <div className="space-y-4">
-                      <h4 className="text-white text-3xl md:text-5xl font-serif italic tracking-tight">Matias Navarrete</h4>
-                      <div className="flex items-center gap-3">
-                        <div className="h-px w-6 bg-studio-accent"></div>
-                        <span className="text-zinc-400 text-[9px] font-mono tracking-widest uppercase">{lang === 'es' ? 'Artista visual 3D' : '3D Visual Artist'}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-studio-accent text-black px-6 py-3 md:px-8 md:py-4 rounded-full shadow-2xl flex items-center gap-3 z-10 transition-transform group-hover:scale-105 duration-700">
-                  <div className="w-1.5 h-1.5 rounded-full bg-black animate-pulse"></div>
-                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap">{lang === 'es' ? 'Disponible para proyectos internacionales' : 'Available for global projects'}</span>
-                </div>
-              </div>
             </div>
 
             {/* Professional Path / Experience Section */}
@@ -324,24 +295,20 @@ const App: React.FC = () => {
                   <div className="group space-y-4">
                     <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
                       <h4 className="text-xl md:text-2xl font-serif text-white">{t.about.experience.poston}</h4>
-                      <span className="text-zinc-600 font-mono text-[10px]">2024 — 2025</span>
+                      <span className="text-zinc-600 font-mono text-[10px]">{t.about.experience.postonDates}</span>
                     </div>
                     <p className="text-zinc-500 text-sm md:text-base font-light italic max-w-2xl">
-                      {lang === 'es' 
-                        ? 'Creación de assets 3D fotorrealistas para campañas publicitarias de alto impacto, trabajando bajo plazos exigentes y feedback constante de agencias.' 
-                        : 'Creation of photorealistic 3D assets for high-impact advertising campaigns, working under demanding deadlines and constant agency feedback.'}
+                      {t.about.experience.postonDesc}
                     </p>
                   </div>
 
                   <div className="group space-y-4">
                     <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
-                      <h4 className="text-xl md:text-2xl font-serif text-white">{t.about.experience.freelance}</h4>
-                      <span className="text-zinc-600 font-mono text-[10px]">{lang === 'es' ? '2024 — Actualidad' : '2024 — Present'}</span>
+                      <h4 className="text-xl md:text-2xl font-serif text-white">{t.about.experience.internship}</h4>
+                      <span className="text-zinc-600 font-mono text-[10px]">{t.about.experience.internshipDates}</span>
                     </div>
                     <p className="text-zinc-500 text-sm md:text-base font-light italic max-w-2xl">
-                      {lang === 'es'
-                        ? 'Desarrollo de visualizaciones de producto personalizadas y gestión integral de proyectos 3D, desde el concepto hasta la entrega final para clientes internacionales.'
-                        : 'Development of custom product visualizations and comprehensive 3D project management, from concept to final delivery for international clients.'}
+                      {t.about.experience.internshipDesc}
                     </p>
                   </div>
 
@@ -350,7 +317,7 @@ const App: React.FC = () => {
                       <h4 className="text-xl md:text-2xl font-serif text-white">{t.about.experience.education}</h4>
                     </div>
                     <p className="text-zinc-500 text-sm md:text-base font-light italic">
-                      Universidad Mayor
+                      Universidad Mayor · {t.about.experience.educationDates}
                     </p>
                   </div>
                 </div>
@@ -475,9 +442,7 @@ const App: React.FC = () => {
                 <span className="text-[8px] font-black uppercase tracking-[0.2em]">ArtStation</span>
               </a>
             </div>
-            <div className="text-[8px] font-black uppercase tracking-[0.5em] text-zinc-700">
-              {t.contact.footer}
-            </div>
+
           </div>
         </div>
       </footer>
