@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Header from './components/Header';
+import MetallicLogo from './components/MetallicLogo';
 import Hero from './components/Hero';
 import ProjectCard from './components/ProjectCard';
 import VideoPlayer from './components/VideoPlayer';
@@ -388,37 +389,7 @@ const App: React.FC = () => {
       <footer className="py-20 px-8 border-t border-white/5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="flex items-center gap-6">
-            <div className="relative group/footer-logo h-10 w-auto flex items-center justify-center overflow-hidden cursor-pointer">
-              <img 
-                src="https://i.ibb.co/krv9LzL/mci-metallic-transparent-logo.png" 
-                alt="Logo" 
-                referrerPolicy="no-referrer"
-                className="h-full w-auto object-contain brightness-0 invert transition-all duration-1000 ease-out" 
-              />
-              {/* Metallic Reflection Layer - Sophisticated Liquid Metal Effect */}
-              <div 
-                className="absolute inset-0 w-full h-full pointer-events-none mix-blend-overlay opacity-0 group-hover/footer-logo:opacity-100 transition-opacity duration-500"
-                style={{
-                  maskImage: 'url(https://i.ibb.co/krv9LzL/mci-metallic-transparent-logo.png)',
-                  maskSize: 'contain',
-                  maskRepeat: 'no-repeat',
-                  maskPosition: 'center',
-                  WebkitMaskImage: 'url(https://i.ibb.co/krv9LzL/mci-metallic-transparent-logo.png)',
-                  WebkitMaskSize: 'contain',
-                  WebkitMaskRepeat: 'no-repeat',
-                  WebkitMaskPosition: 'center'
-                }}
-              >
-                {/* Primary Sharp Reflection Sweep */}
-                <div className="absolute inset-0 w-[300%] h-full bg-gradient-to-r from-transparent via-white/0 via-[45%] via-white/10 via-[49%] via-white/60 via-[50%] via-white/10 via-[51%] via-white/0 via-[55%] to-transparent -skew-x-[35deg] -translate-x-full group-hover/footer-logo:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
-                
-                {/* Secondary Broad Ambient Sheen */}
-                <div className="absolute inset-0 w-[300%] h-full bg-gradient-to-r from-transparent via-white/0 via-[40%] via-white/5 via-[50%] via-white/5 via-[60%] via-white/0 to-transparent -skew-x-[35deg] -translate-x-full group-hover/footer-logo:translate-x-[100%] transition-transform duration-1500 delay-75 ease-out"></div>
-                
-                {/* Subtle Inner Glow on Hover */}
-                <div className="absolute inset-0 bg-white/5 blur-sm opacity-0 group-hover/footer-logo:opacity-100 transition-opacity duration-1000"></div>
-              </div>
-            </div>
+            <MetallicLogo lang={lang} className="h-10 w-[61px]" />
             <span className="text-[8px] font-black uppercase tracking-[0.5em] text-zinc-700">© 2026 Matías Navarrete Studio</span>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
@@ -509,7 +480,7 @@ const App: React.FC = () => {
                                 src={selectedProject.gallery[currentGalleryIndex]} 
                                 alt={`${selectedProject.title} - ${currentGalleryIndex}`} 
                                 referrerPolicy="no-referrer"
-                                className="w-full h-full object-cover"
+                                className={`w-full h-full ${selectedProject.id === 'biovayl' ? 'object-contain' : 'object-cover'}`}
                               />
                             )}
                           </motion.div>
