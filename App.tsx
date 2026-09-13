@@ -489,10 +489,12 @@ const App: React.FC = () => {
                         {/* Gallery Navigation */}
                         {selectedProject.gallery.length > 1 && (
                           <>
-                            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+                            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex flex-wrap justify-center gap-2 w-[80%] max-w-sm z-20 rounded-xl bg-black/60 p-2">
                               {selectedProject.gallery.map((_, idx) => (
                                 <button
                                   key={idx}
+                                  aria-label={`${lang === 'es' ? 'Ver imagen' : 'View image'} ${idx + 1}`}
+                                  aria-current={currentGalleryIndex === idx ? 'true' : undefined}
                                   onClick={() => setCurrentGalleryIndex(idx)}
                                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                                     currentGalleryIndex === idx ? 'bg-studio-accent w-6' : 'bg-white/20 hover:bg-white/40'
@@ -500,13 +502,14 @@ const App: React.FC = () => {
                                 />
                               ))}
                             </div>
-                            <button 
+                            <div className="absolute top-4 right-4 rounded-full bg-black/70 px-3 py-1 text-xs text-white z-20" aria-live="polite">{currentGalleryIndex + 1} / {selectedProject.gallery.length}</div>
+                            <button aria-label={lang === 'es' ? 'Imagen anterior' : 'Previous image'}
                               onClick={() => setCurrentGalleryIndex((prev) => (prev - 1 + selectedProject.gallery!.length) % selectedProject.gallery!.length)}
                               className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/40 backdrop-blur-md rounded-full text-white/60 hover:text-white hover:bg-black/60 transition-all z-20"
                             >
                               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
                             </button>
-                            <button 
+                            <button aria-label={lang === 'es' ? 'Imagen siguiente' : 'Next image'}
                               onClick={() => setCurrentGalleryIndex((prev) => (prev + 1) % selectedProject.gallery!.length)}
                               className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/40 backdrop-blur-md rounded-full text-white/60 hover:text-white hover:bg-black/60 transition-all z-20"
                             >
