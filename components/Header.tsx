@@ -1,5 +1,6 @@
 
 import React from 'react';
+import MetallicLogo from './MetallicLogo';
 import { motion } from 'motion/react';
 import { ExternalLink } from 'lucide-react';
 import { InstagramIcon, ArtStationIcon } from './SocialIcons';
@@ -23,16 +24,7 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang }) => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 h-20 md:h-24 flex items-center justify-between">
         <div className="flex items-center gap-3 md:gap-5 min-w-0">
-          <a href="#" aria-label={lang === 'es' ? 'Ir al inicio' : 'Back to top'} className="flex h-12 w-[74px] md:h-14 md:w-[86px] shrink-0 items-center justify-center">
-            <img
-              src="https://i.ibb.co/krv9LzL/mci-metallic-transparent-logo.png"
-              alt="Matías CGI"
-              width={805}
-              height={529}
-              referrerPolicy="no-referrer"
-              className="block h-full w-full object-contain brightness-0 invert"
-            />
-          </a>
+          <MetallicLogo lang={lang} className="h-12 w-[74px] md:h-14 md:w-[86px]" />
           <div className="hidden min-[375px]:flex flex-col gap-1 border-l border-white/15 pl-3 md:pl-5 py-1">
             <span className="text-base md:text-xl font-serif font-bold tracking-tighter text-white leading-none">Matías Navarrete</span>
             <span className="hidden sm:block text-[9px] font-medium tracking-[0.15em] text-zinc-300 uppercase mt-1">CGI Advertising Specialist</span>

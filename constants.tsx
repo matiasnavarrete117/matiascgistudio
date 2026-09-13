@@ -9,6 +9,29 @@ export const getYoutubeId = (url: string) => {
 };
 
 export const PROJECTS: Project[] = [
+{
+  "id": "biovayl",
+  "title": "Biovayl: Beetroot & Moringa",
+  "category": [
+    "Product",
+    "Advertising"
+  ],
+  "description": "Product visualization and graphic compositions for Biovayl Beetroot and Moringa packaging.",
+  "descriptionEs": "Visualización de producto y composiciones gráficas para los envases de Beetroot y Moringa de Biovayl. Una selección de renders de estudio y piezas que combinan producto, packaging y elementos visuales.",
+  "descriptionEn": "Product visualization and graphic compositions for Biovayl Beetroot and Moringa packaging. A selection of studio renders and visuals combining product, packaging, and graphic elements.",
+  "thumbnail": "/projects/biovayl/image0.webp",
+  "gallery": [
+    "/projects/biovayl/image0.webp",
+    "/projects/biovayl/image1.webp",
+    "/projects/biovayl/image2.webp"
+  ],
+  "tools": [
+    "Blender",
+    "Photoshop"
+  ],
+  "year": "",
+  "featured": true
+},
   {
     id: 'marley',
     title: 'Marley Coffee: Geometric Essence',
