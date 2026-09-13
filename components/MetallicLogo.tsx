@@ -8,7 +8,7 @@ export default function MetallicLogo({ lang, className = '' }: { lang: 'es' | 'e
       className={'metallic-logo shrink-0 ' + className}
       onPointerEnter={event => { if (event.pointerType === 'mouse') activate(); }}
       onPointerDown={activate} onFocus={activate}>
-      <img src="https://i.ibb.co/krv9LzL/mci-metallic-transparent-logo.png"
+      <img src="/brand/metallic-logo.webp"
         alt="Matías CGI" width={805} height={529} decoding="async" loading="eager"
         referrerPolicy="no-referrer" />
       {sweep > 0 && <span key={sweep} className="metallic-logo-reflection" aria-hidden="true" />}

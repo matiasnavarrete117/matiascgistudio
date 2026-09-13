@@ -19,12 +19,8 @@ export const PROJECTS: Project[] = [
   "description": "Product visualization and graphic compositions for Biovayl Beetroot and Moringa packaging.",
   "descriptionEs": "Visualización de producto y composiciones gráficas para los envases de Beetroot y Moringa de Biovayl. Una selección de renders de estudio y piezas que combinan producto, packaging y elementos visuales.",
   "descriptionEn": "Product visualization and graphic compositions for Biovayl Beetroot and Moringa packaging. A selection of studio renders and visuals combining product, packaging, and graphic elements.",
-  "thumbnail": "/projects/biovayl/image0.webp",
-  "gallery": [
-    "/projects/biovayl/image0.webp",
-    "/projects/biovayl/image1.webp",
-    "/projects/biovayl/image2.webp"
-  ],
+  "thumbnail": "/projects/biovayl/scene0.webp",
+  "gallery": ["/projects/biovayl/scene0.webp","/projects/biovayl/scene1.webp","/projects/biovayl/scene2.webp","/projects/biovayl/scene3.webp","/projects/biovayl/scene4.webp","/projects/biovayl/scene5.webp","/projects/biovayl/scene6.webp","/projects/biovayl/scene7.webp","/projects/biovayl/scene8.webp","/projects/biovayl/scene9.webp","/projects/biovayl/scene10.webp","/projects/biovayl/scene11.webp","/projects/biovayl/scene12.webp","/projects/biovayl/scene13.webp","/projects/biovayl/scene14.webp"],
   "tools": [
     "Blender",
     "Photoshop"
