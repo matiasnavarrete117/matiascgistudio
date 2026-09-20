@@ -375,10 +375,10 @@ const App: React.FC = () => {
             <div className="pt-8 md:pt-12 flex justify-center">
               <Magnetic strength={0.2}>
                 <a 
-                  href="mailto:matiasnavarrete117@gmail.com" 
+                  href="mailto:hello@matiascgi.com" 
                   className="inline-block text-xl sm:text-3xl md:text-5xl font-serif text-white hover:text-studio-accent transition-all duration-500 border-b border-white/10 pb-2 md:pb-4"
                 >
-                  matiasnavarrete117@gmail.com
+                  hello@matiascgi.com
                 </a>
               </Magnetic>
             </div>
