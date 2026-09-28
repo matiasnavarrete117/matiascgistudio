@@ -335,9 +335,9 @@ const App: React.FC = () => {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-20 md:mb-32">
               <div className="space-y-6">
                 <span className="text-zinc-700 text-[8px] md:text-[9px] font-black uppercase tracking-[0.6em]">{t.methodology.tagline}</span>
-                  <SplitText
-                    text={`${t.methodology.title1} ${t.methodology.title2}`}
-                    as="h2"
+                <SplitText
+                  text={`${t.methodology.title1} ${t.methodology.title2}`}
+                  as="h2"
                   className="text-5xl sm:text-6xl md:text-7xl font-serif text-white tracking-tighter leading-none"
                 />
               </div>
