@@ -20,7 +20,7 @@ const PageTransition: React.FC = () => {
           className="mb-8"
         >
           <img 
-            src="/brand/metallic-logo.webp"
+            src="https://i.ibb.co/krv9LzL/mci-metallic-transparent-logo.png"
             alt="Logo" 
             className="h-16 w-auto brightness-150 grayscale-0"
           />
