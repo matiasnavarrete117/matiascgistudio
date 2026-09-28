@@ -123,6 +123,7 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
               </span>
               <SplitText 
                 key={`headline-${lang}`}
+                as="h1"
                 text={t.tagline}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-serif text-white tracking-tighter leading-[0.9] md:leading-[0.85]"
               />

@@ -4,7 +4,7 @@ export const translations = {
     nav: { work: 'Portfolio', about: 'Sobre mí', contact: 'Contacto', resume: 'Currículum' },
     hero: {
       tagline: 'Visualización 3D de productos para marcas y agencias',
-      desc: 'Creo visuales 3D fotorrealistas que ayudan a que los productos destaquen y vendan.',
+      desc: 'Creo renders de producto y animaciones CGI fotorrealistas para campañas, ecommerce y redes sociales.',
       cta: 'Ver Proyectos',
       scroll: 'Explorar'
     },
@@ -12,7 +12,7 @@ export const translations = {
       tagline: 'Trabajos seleccionados',
       title1: 'CGI',
       title2: 'PORTFOLIO',
-      desc: 'Visualizaciones de producto de alta fidelidad, diseñadas para dominar el mercado digital contemporáneo.',
+      desc: 'Proyectos de visualización 3D, animación de producto y piezas publicitarias para marcas y agencias.',
       filterAll: 'Todos',
       filterProduct: 'Producto',
       filterAdvertising: 'Publicidad',
@@ -46,7 +46,7 @@ export const translations = {
     contact: {
       title1: 'Hablemos de',
       title2: 'Tu Visión',
-      desc: 'Desde startups emergentes hasta campañas globales. Hablemos sobre cómo elevar tu próximo proyecto, independientemente de su escala.',
+      desc: '¿Necesitas renders, animación 3D o una pieza CGI para tu marca? Cuéntame el producto, el formato y el plazo de entrega.',
       footer: '© 2026 Matías Navarrete Studio'
     },
     project: {
@@ -71,7 +71,7 @@ export const translations = {
     nav: { work: 'Portfolio', about: 'About me', contact: 'Contact', resume: 'Resume' },
     hero: {
       tagline: 'High-End Product Visualization for Brands & Agencies',
-      desc: 'I create photorealistic 3D visuals that help products stand out and sell.',
+      desc: 'I create photorealistic product renders and CGI animation for campaigns, ecommerce and social media.',
       cta: 'See Projects',
       scroll: 'Explore'
     },
@@ -79,7 +79,7 @@ export const translations = {
       tagline: 'Selected Works',
       title1: 'CGI',
       title2: 'PORTFOLIO',
-      desc: 'High-fidelity product visualizations, engineered to dominate the contemporary digital market.',
+      desc: 'Selected product visualization, 3D animation and advertising work for brands and agencies.',
       filterAll: 'All',
       filterProduct: 'Product',
       filterAdvertising: 'Advertising',
@@ -113,7 +113,7 @@ export const translations = {
     contact: {
       title1: 'Let\'s Talk',
       title2: 'Your Vision',
-      desc: 'From emerging startups to global campaigns. Let’s discuss how to elevate your next project, regardless of scale.',
+      desc: 'Need product renders, 3D animation or a CGI campaign asset? Tell me about your product, format and timeline.',
       footer: '© 2026 Matías Navarrete Studio'
     },
     project: {

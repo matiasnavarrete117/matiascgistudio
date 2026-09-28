@@ -79,6 +79,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, lang }) => 
           <img 
             src={project.thumbnail} 
             alt={project.title}
+            loading="lazy"
+            decoding="async"
             referrerPolicy="no-referrer"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-0 ${isActive ? 'opacity-0' : 'opacity-100'}`}
           />
@@ -126,6 +128,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, lang }) => 
           <img 
             src={project.thumbnail} 
             alt={project.title}
+            loading="lazy"
+            decoding="async"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover transition-all duration-700"
           />

@@ -19,7 +19,7 @@ import SplitText from './components/SplitText';
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<'es' | 'en'>(() => {
-    if (typeof window === 'undefined') return 'en';
+    if (typeof window === 'undefined') return 'es';
     try {
       const savedLang = window.localStorage.getItem('user-lang');
       if (savedLang === 'es' || savedLang === 'en') return savedLang;
@@ -122,7 +122,7 @@ const App: React.FC = () => {
   return (
     <div className={`bg-studio-black min-h-screen w-full overflow-x-hidden text-zinc-300 selection:bg-white selection:text-black ${isTouchDevice ? 'cursor-auto' : 'cursor-none'}`}>
       <CustomCursor />
-      <PageTransition />
+      {typeof window !== 'undefined' && <PageTransition />}
       <Header lang={lang} setLang={handleSetLang} />
       
       <motion.main 
@@ -172,6 +172,7 @@ const App: React.FC = () => {
               </motion.span>
               <SplitText 
                 text={`${t.work.title1} ${t.work.title2}`}
+                as="h2"
                 className="text-5xl sm:text-6xl md:text-7xl lg:text-[10rem] font-serif text-white tracking-tighter leading-[0.9] md:leading-[0.85] lg:leading-[0.8]"
               />
             </div>
@@ -228,6 +229,7 @@ const App: React.FC = () => {
                   <span className="text-zinc-700 text-[8px] md:text-[9px] font-black uppercase tracking-[0.6em]">{t.about.tagline}</span>
                   <SplitText 
                     text={`${t.about.title1} ${t.about.title2}`}
+                    as="h2"
                     className="text-5xl sm:text-6xl md:text-7xl font-serif text-white tracking-tighter leading-none"
                   />
                 </div>
@@ -333,8 +335,9 @@ const App: React.FC = () => {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-20 md:mb-32">
               <div className="space-y-6">
                 <span className="text-zinc-700 text-[8px] md:text-[9px] font-black uppercase tracking-[0.6em]">{t.methodology.tagline}</span>
-                <SplitText 
-                  text={`${t.methodology.title1} ${t.methodology.title2}`}
+                  <SplitText
+                    text={`${t.methodology.title1} ${t.methodology.title2}`}
+                    as="h2"
                   className="text-5xl sm:text-6xl md:text-7xl font-serif text-white tracking-tighter leading-none"
                 />
               </div>
@@ -367,6 +370,7 @@ const App: React.FC = () => {
           <div className="space-y-8 md:space-y-12">
             <SplitText 
               text={`${t.contact.title1} ${t.contact.title2}`}
+              as="h2"
               className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-serif text-white tracking-tighter leading-none justify-center"
             />
             <p className="text-zinc-500 text-lg md:text-xl font-light italic">

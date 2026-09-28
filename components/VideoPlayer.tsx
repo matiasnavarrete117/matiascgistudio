@@ -180,6 +180,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         loop={loop}
         muted={muted}
         playsInline
+        preload={autoPlay ? 'metadata' : 'none'}
         referrerPolicy="no-referrer"
         onWaiting={onWaiting}
         onCanPlay={onCanPlay}
