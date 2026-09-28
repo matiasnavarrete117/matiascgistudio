@@ -5,9 +5,10 @@ interface SplitTextProps {
   text: string;
   className?: string;
   delay?: number;
+  as?: 'h1' | 'h2' | 'div';
 }
 
-const SplitText: React.FC<SplitTextProps> = ({ text, className = "", delay = 0 }) => {
+const SplitText: React.FC<SplitTextProps> = ({ text, className = "", delay = 0, as = 'div' }) => {
   const words = text.split(" ");
 
   const container = {
@@ -39,8 +40,9 @@ const SplitText: React.FC<SplitTextProps> = ({ text, className = "", delay = 0 }
     },
   };
 
+  const Component = motion[as];
   return (
-    <motion.div
+    <Component
       style={{ display: "flex", flexWrap: "wrap", overflow: "hidden" }}
       variants={container}
       initial="hidden"
@@ -57,7 +59,7 @@ const SplitText: React.FC<SplitTextProps> = ({ text, className = "", delay = 0 }
           {word}
         </motion.span>
       ))}
-    </motion.div>
+    </Component>
   );
 };
 
