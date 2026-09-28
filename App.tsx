@@ -38,6 +38,29 @@ const App: React.FC = () => {
 
   useEffect(() => {
     document.documentElement.lang = lang;
+    const metadata = lang === 'es'
+      ? {
+          title: 'Matías Navarrete | Visualización de productos y CGI 3D en Chile',
+          description: 'Artista 3D en Santiago de Chile. Renders de producto, animación CGI y visuales publicitarios para marcas y agencias. Revisa proyectos de Biovayl, Marley Coffee y más.',
+          socialTitle: 'Matías Navarrete | Visualización de productos y CGI 3D',
+          socialDescription: 'Renders de producto, animación CGI y visuales publicitarios para marcas y agencias en Chile y el exterior.',
+        }
+      : {
+          title: 'Matías Navarrete | Product Visualization & CGI Artist',
+          description: '3D artist based in Santiago, Chile. Photorealistic product renders, CGI animation and advertising visuals for brands and agencies worldwide.',
+          socialTitle: 'Matías Navarrete | Product Visualization & CGI Artist',
+          socialDescription: 'Product renders, CGI animation and advertising visuals for brands and agencies worldwide.',
+        };
+    document.title = metadata.title;
+    const updateMeta = (selector: string, content: string) => {
+      const element = document.querySelector<HTMLMetaElement>(selector);
+      if (element) element.content = content;
+    };
+    updateMeta('meta[name="description"]', metadata.description);
+    updateMeta('meta[property="og:title"]', metadata.socialTitle);
+    updateMeta('meta[property="og:description"]', metadata.socialDescription);
+    updateMeta('meta[name="twitter:title"]', metadata.socialTitle);
+    updateMeta('meta[name="twitter:description"]', metadata.socialDescription);
   }, [lang]);
 
   const handleSetLang = (newLang: 'es' | 'en') => {
